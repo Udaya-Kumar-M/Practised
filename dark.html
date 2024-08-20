@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+        transition:background 0.5s,color,0.5s;
+        }
+        .darktheme{
+            background-color: black;
+            color:beige;
+            font-size: 1rem;
+        }
+        .lighttheme{
+            background-color: whitesmoke;
+            color:red;
+            font-size: 1rem;
+        }
+
+    </style>
+    
+</head>
+<body>
+    <div>
+        <button onclick="switchToDark()" id="super">Dark Theme</button>
+        <button onclick="switchToLight()" id="flop">Light Theme</button>
+    </div>
+    <h1>Hello World</h1>
+    <p id="darker"></p>
+    <p id="lighter"></p>
+
+    <script>
+        function switchToDark(){
+            document.body.classList.add('darktheme');
+            document.body.classList.remove('lighttheme');
+            document.getElementById("darker").textContent = "Your in The Darker Mode";
+            document.getElementById("darker").style.display = "block";
+            document.getElementById("lighter").style.display = "none";
+            document.getElementById("super").style.display = "none";
+            document.getElementById("flop").style.display = "block";
+        
+        }
+        
+        function switchToLight(){
+            
+            document.body.classList.add('lighttheme');
+            document.body.classList.remove('darktheme');
+            document.getElementById("lighter").textContent = "Your in The Lighter Mode";
+            document.getElementById("lighter").style.display = "block";
+            document.getElementById("darker").style.display="none";
+            document.getElementById("flop").style.display = "none";
+            document.getElementById("super").style.display = "block";
+        
+        }
+    </script>
+</body>
+</html>
